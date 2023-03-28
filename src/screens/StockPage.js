@@ -71,7 +71,6 @@ export default function StockPage (route) {
             <NewsSection/>
             <StoryBlocks/>
           </ScrollView >
-          
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>

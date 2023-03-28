@@ -51,10 +51,10 @@ export default function Home() {
           <SearchBarInactive/>
           {/* TO DO: Need to make sure you have done the logout modal below:  */}
           <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />  
-            <ValueCard cashBalance={cash} delta={difference} />
-            <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
-            <TextWithSort title='My Positions' />
-            <SliderBar bottomspacing={150} titles={titles} screens={screens} />
+          <ValueCard cashBalance={cash} delta={difference} />
+          <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
+          <TextWithSort title='My Positions' />
+          <SliderBar bottomspacing={150} titles={titles} screens={screens} />
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>

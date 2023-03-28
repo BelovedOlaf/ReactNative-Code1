@@ -11,7 +11,7 @@
 
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home.js';
-import Profile from '../screens/Profile.js';
+import ProfileSettings from '../screens/ProfileSettings';
 import Notifications from '../screens/Notifications.js';
 import Leaderboard from '../screens/Leaderboard.js';
 import CountryLeaderboard from '../screens/CountryLeaderboard.js';
@@ -35,6 +35,9 @@ import Settings from '../screens/Settings.js';
 import Language from '../screens/Language.js';
 import HelpCenter from '../screens/HelpCenter';
 import ChangePincode from '../components/ChangePincode';
+import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
+import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
+import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -43,7 +46,7 @@ const MainAppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home" screenOptions={{ animationEnabled: false, gestureEnabled: false}}>
       {/* Top Menu Bar screens: */}
-      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false}}/>
+      <Stack.Screen name="Profile" component={ProfileSettings} options={{ headerShown: false}}/>
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false}}/>
       <Stack.Screen name="Leaderboard" component={Leaderboard} options={{ headerShown: false}}/>
       <Stack.Screen name="Newsfeed" component={Newsfeed} options={{ headerShown: false}}/>
@@ -73,6 +76,9 @@ const MainAppNavigator = () => {
       <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
       <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="Cambridge Algo Traders" component={CambridgeAlgoTradersProfile} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>

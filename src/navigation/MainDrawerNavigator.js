@@ -17,6 +17,7 @@ const MainDrawerNavigator = () => {
   const DrawerContent = () => {
     
     return (
+      
       <View style={styles.drawerContent}>
         <View style={styles.logoText}>
         {/* MENU ICONS AND NAVIGATION SECTION */}
@@ -57,7 +58,7 @@ const MainDrawerNavigator = () => {
           {/* MY FUNDS SECTION */}
           <Text style={[globalFonts.H5(globalColors.others.white.color),{paddingTop: 24}]}>My Funds</Text>
           {/* The screens are labelled as they are titled e.g. "UCL Fintech Fund" */}
-          <FundListLoop fundnames={fundnames} profilePics={profilePics} />
+            <FundListLoop fundnames={fundnames} profilePics={profilePics} />
           <Text> </Text>
         </ScrollView>
         {/* PROFILE BOTTOM SECTION */}

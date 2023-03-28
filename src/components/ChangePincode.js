@@ -5,8 +5,7 @@ import { useFonts } from 'expo-font';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { ScrollView } from 'react-native-gesture-handler';
-import OldPinCode from './PinCode';
-import NewPinCode from './PinCode';
+import PinCode from './PinCode';
 
 function ChangePincode(props) {
 
@@ -48,7 +47,7 @@ function ChangePincode(props) {
       <View style ={styles.pinKeyboardPanel}>
         <View style={styles.pinKeyboard}>
           {
-            label.map((value) => <PinKey label={value} onPress={() => onPressKey(value)} />)
+            label.map((value, index) => <PinKey key={index} label={value} onPress={() => onPressKey(value)} />)
           }
         </View>
         <View style={{height: 8, backgroundColor: '#35383F', width: '40%', marginTop: 10, marginLeft: '30%', borderRadius: 5, marginBottom: 10}}>
@@ -86,17 +85,13 @@ function ChangePincode(props) {
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>Old Pincode</Text>
-
-            <OldPinCode password = {oldPassword} passwordIndex = {passwordIndex} />
-
+          <PinCode password = {oldPassword} passwordIndex = {passwordIndex} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>New Pincode</Text>
-
-            <NewPinCode password = {newPassword} passwordIndex = {passwordIndex-4} />
-
+          <PinCode password = {newPassword} passwordIndex = {passwordIndex-4} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
@@ -159,11 +154,12 @@ const styles = StyleSheet.create({
     marginTop: 2
   },
   loremIpsumRow: {
-    height: 130,
     flexDirection: 'column',
     marginTop: 31,
     marginLeft: '8%',
-    marginRight: '8%'
+    marginRight: '8%',
+    width: '84%',
+    aspectRatio: 3.2,
   },
 
   // styles for pinKeyboard

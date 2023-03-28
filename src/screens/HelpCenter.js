@@ -47,10 +47,10 @@ export default function HelpCenter () {
         <View style={styles.container} onLayout={onLayoutRootView}>
             <View style={styles.fullComp}>
             <TouchableOpacity  onPress={() => navigation.goBack()}>
-                    <Image
-                        source={require('../assets/icons/ArrowLeft_Green.png')}
-                        style={styles.ArrowLeft_GreenIcon}
-                    />      
+              <Image
+                  source={require('../assets/icons/ArrowLeft_Green.png')}
+                  style={styles.ArrowLeft_GreenIcon}
+              />      
             </TouchableOpacity>
             <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}>Help Center</Text>
             </View>
@@ -65,13 +65,13 @@ export default function HelpCenter () {
 };
 
 const styles = StyleSheet.create({
-    fullComp:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginLeft: 24,
-        marginTop: 24,
-        marginRight: 24,
-    },  
+  fullComp:{
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginLeft: 24,
+      marginTop: 24,
+      marginRight: 24,
+  },
   container: {
     flex: 1,
   },
