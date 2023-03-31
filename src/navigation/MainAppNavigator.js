@@ -11,7 +11,7 @@
 
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home.js';
-import ProfileSettings from '../screens/ProfileSettings';
+import ProfileSettings from '../screens/ProfileSettings.js';
 import Notifications from '../screens/Notifications.js';
 import Leaderboard from '../screens/Leaderboard.js';
 import CountryLeaderboard from '../screens/CountryLeaderboard.js';

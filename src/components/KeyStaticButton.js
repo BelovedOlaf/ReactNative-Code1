@@ -32,10 +32,10 @@ const KeyStaticButton = (props) => {
       />
       <View style={{flexDirection: 'column'}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text style={[globalFonts.H6('white'), {fontSize: 12}]}>{props.name}</Text>
+          <Text style={[globalFonts.H6('white'), {fontSize: 10}]}>{props.name}</Text>
         </View>
         <View style={{flex: 1}}>
-          <Text style={[globalFonts.H6('white'), {fontSize: 16}]}>{props.value}</Text>
+          <Text style={[globalFonts.H6('white'), {fontSize: 14}]}>{props.value}</Text>
         </View>
       </View>
     </View>
