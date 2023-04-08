@@ -1,10 +1,9 @@
 // PLaceholder Screen
 // Chnage everything with PLaceholder in, only 2 things to change. 
 
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import { View, StyleSheet, Text, Image, TextInput, Select, Button } from 'react-native';
 import { StatusBar, DatePickerIOS } from 'react-native';
-import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
@@ -22,16 +21,30 @@ import {Dropdown} from 'react-native-element-dropdown';
 
 export default function Profile () {
 
+  const navigation = useNavigation();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("apple");
   const [items, setItems] = useState([
     {label: 'Apple', value: 'apple'},
     {label: 'Banana', value: 'banana'}
   ]);
-  const [dropdown, setDropdown] = useState(null);
+  const [dropdown, setDropdown] = useState('');
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+  const [fontsLoaded] = useFonts({
+    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
+  });
+
+const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -53,22 +66,13 @@ export default function Profile () {
     {label: 'Canada', value: 'Canada'},
     {label: 'Australia', value: 'Australia'},
     {label: 'Ireland', value: 'Ireland'}
-];
+  ];
 
-  const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
-  });
+  
 
   SplashScreen.preventAutoHideAsync(); 
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  
 
   if (!fontsLoaded) {
     return null;
@@ -97,8 +101,8 @@ export default function Profile () {
           placeholder="Select item"
           value={dropdown}
           onChange={item => {
-          setDropdown(item.value);
-              console.log('selected', item);
+            setDropdown(item.value);
+            console.log('selected', item);
           }}
           renderItem={item => _renderItem(item)}
           textError="Error"
@@ -155,8 +159,6 @@ export default function Profile () {
       </View>
     );
   }
-
-  const navigation = useNavigation();
 
   return ( 
     <Background>
