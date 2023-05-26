@@ -148,4 +148,3 @@ export default MainDrawerNavigator;
 // TO DO: BACKEND these need to be replaced with backend calls to users funds and thier icons. 
 const fundnames = ['UCL Fintech Fund', 'LSE Sustainable finance Fund', 'Cambridge Algo Traders'];
 const profilePics = [require('../assets/funds/UCLFintech.png'), require('../assets/funds/BioShorters.png'), require('../assets/funds/UCLFoodTech.png')];
-

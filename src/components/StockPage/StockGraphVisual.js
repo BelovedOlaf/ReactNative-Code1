@@ -14,7 +14,7 @@ import LogoSelect from '../../assets/logoRequire.js';
 const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
-  graph: {
+graph: {
     width: screenWidth,
     height: 0.781*screenWidth,
     resizeMode: 'contain'

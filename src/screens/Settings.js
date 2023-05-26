@@ -42,7 +42,7 @@ export default function Settings () {
   const navigation = useNavigation();
 
   const renderButton = ({ image, text }) => (
-    <TouchableOpacity onPress={() => navigation.navigate(text === 'Account Details' ? 'Profile' : text)}>
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
       <View style={styles.buttonContainer}>
         <Image source={image} style={styles.buttonImage} />
         <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
@@ -83,6 +83,36 @@ export default function Settings () {
   );
 
 
+  const renderButton5 = ({ image, text, text2 }) => (
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
+      <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.buttonImage} />
+        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
+        <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), {marginLeft: 90}]}>{text2}</Text>
+        <Image
+            source={require('../assets/icons/ArrowRightWhite.png')}
+            style={styles.ArrowRightWhite}
+        />   
+      </View>
+    </TouchableOpacity>
+  );
+  
+
+  const renderButton6 = ({ image, text, text2 }) => (
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
+      <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.buttonImage} />
+        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
+        <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), {marginLeft: 90}]}>{text2}</Text>
+        <Image
+            source={require('../assets/icons/ArrowRightWhite.png')}
+            style={styles.ArrowRightWhite}
+        />   
+      </View>
+    </TouchableOpacity>
+  );
+
+
   return ( 
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -101,20 +131,20 @@ export default function Settings () {
           <View style={styles.scrollbox}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }} alwaysBounceVertical={true}>
               <View style={{paddingBottom: 100}}>
-                <View style={styles.containerfreestock}>
-                  <Image 
-                    source={require('../assets/PictureSettings1.png')}
-                    style={styles.image1}
-                  />
-                  <View style={styles.textbox}>
-                    <Text style={globalFonts.H5(globalColors.others.white.color)}>Get free stock 💰</Text>
-                    <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginTop:4}]}>Refer your friends & unlock up to </Text>
-                    <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color)]}>$100 of free stock per friend</Text>
-                  </View>
-                </View>
-              {renderButton({
+            <View style={styles.containerfreestock}>
+            <Image 
+              source={require('../assets/PictureSettings1.png')}
+              style={styles.image1}
+            />
+            <View style={styles.textbox}>
+              <Text style={globalFonts.H5(globalColors.others.white.color)}>Get free stock 💰</Text>
+              <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginTop:4}]}>Refer your friends & unlock up to </Text>
+              <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color)]}>$100 of free stock per friend</Text>
+            </View>
+          </View>
+              {renderButton6({
                 image: require('../assets/PictureSettings2.png'),
-                text: 'Account Details',
+                text: 'ProfileSettings',
               })}
               {renderButton({
                 image: require('../assets/PictureSettings3.png'),
@@ -138,7 +168,7 @@ export default function Settings () {
                 image: require('../assets/PictureSettings7.png'),
                 text: 'Help Center',
               })}
-              {renderButton({
+              {renderButton5({
                 image: require('../assets/PictureSettings8.png'),
                 text: 'Legal',
               })}
