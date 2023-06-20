@@ -40,7 +40,7 @@
     "react-native-animated-spinkit": "1.4.1",
     "react-native-dynamic-search-bar": "github:WrathChaos/react-native-dynamic-search-bar#expo",
     "react-native-dynamic-vector-icons": "github:WrathChaos/react-native-dynamic-vector-icons#expo",
-    "react-native-element-dropdown": "react-native-element-dropdown@2.8.1",
+    "react-native-element-dropdown": "^2.9.0",
     "react-native-gesture-handler": "~2.8.0",
     "react-native-modal-datetime-picker": "^14.0.1",
     "react-native-pager-view": "6.0.1",
