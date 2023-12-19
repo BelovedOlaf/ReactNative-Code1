@@ -19,6 +19,9 @@ export default function AdminPanelHeader() {
                 <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                     <Image source={require('../../assets/icons/ArrowRightGreen.png')} style={styles.arrowIcon} />
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                    <Image source={require('../../assets/icons/ArrowRightGreen.png')} style={styles.arrowIcon} />
+                </TouchableOpacity>
                 <Text style={globalFonts.H4(globalColors.others.white.color)}>Admin Panel</Text>
             </View>
 
