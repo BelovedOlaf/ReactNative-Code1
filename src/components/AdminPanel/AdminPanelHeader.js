@@ -27,6 +27,10 @@ export default function AdminPanelHeader() {
                 <Text style={globalFonts.H6(globalColors.primary._500.color)}>Call Poll</Text>
                 <Image source={require('../../assets/icons/ChartGreenOutline.png')} style={styles.icon} />                
             </TouchableOpacity>
+            <TouchableOpacity style={styles.rightContainer} onPress={() => navigation.navigate('PollPopop')}>
+                <Text style={globalFonts.H6(globalColors.primary._500.color)}>Call Poll</Text>
+                <Image source={require('../../assets/icons/ChartGreenOutline.png')} style={styles.icon} />                
+            </TouchableOpacity>
         </View>
     );
 }
